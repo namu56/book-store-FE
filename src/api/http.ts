@@ -40,3 +40,28 @@ export const createClient = (config?: AxiosRequestConfig) => {
 };
 
 export const httpClient = createClient();
+
+// 공통 요청 부분
+type RequestMethod = "get" | "post" | "put" | "delete";
+
+export const requestHandler = async <T, R>(method: RequestMethod, url: string, payload?: T) => {
+  let response;
+
+  // 리팩토링 대상
+  switch (method) {
+    case "post":
+      response = await httpClient.post<R>(url, payload);
+      break;
+    case "get":
+      response = await httpClient.get<R>(url, { params: payload });
+      break;
+    case "put":
+      response = await httpClient.post<R>(url, payload);
+      break;
+    case "delete":
+      response = await httpClient.delete<R>(url);
+      break;
+  }
+
+  return response.data;
+};
