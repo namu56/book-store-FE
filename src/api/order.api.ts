@@ -6,7 +6,7 @@ export const order = async (orderData: OrderSheet) => {
 };
 
 export const fetchOrders = async () => {
-  return await requestHandler<undefined, Order>("get", "/orders");
+  return await requestHandler<undefined, Order[]>("get", "/orders");
 };
 
 export const fetchOrder = async (orderId: number) => {

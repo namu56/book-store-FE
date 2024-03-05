@@ -16,7 +16,7 @@ interface FetchBooksResponse {
 
 export const fetchBooks = async (params: FetchBooksParams) => {
   try {
-    return requestHandler<FetchBooksParams, FetchBooksParams>("get", "/books", params);
+    return requestHandler<FetchBooksParams, FetchBooksResponse>("get", "/books", params);
   } catch (error) {
     return {
       books: [],
