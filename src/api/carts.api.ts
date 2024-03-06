@@ -12,7 +12,7 @@ export const addCart = async (params: AddCartParams) => {
 
 export const fetchCart = async () => {
   console.log("httpClient: ", httpClient);
-  return await requestHandler<undefined, Cart[]>("get", "/cart");
+  return await requestHandler<Cart[]>("get", "/cart");
 };
 
 export const deleteCart = async (cartId: number) => {

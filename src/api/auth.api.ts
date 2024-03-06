@@ -1,5 +1,5 @@
 import { SignupProps } from "../pages/Signup";
-import { httpClient, requestHandler } from "./http";
+import { requestHandler } from "./http";
 
 interface LoginResponse {
   token: string;
@@ -17,5 +17,5 @@ export const resetPassword = async (data: SignupProps) => {
 };
 
 export const login = async (data: SignupProps) => {
-  return await requestHandler<SignupProps, LoginResponse>("post", "/users/login", data);
+  return await requestHandler<LoginResponse, SignupProps>("post", "/users/login", data);
 };

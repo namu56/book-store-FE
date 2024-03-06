@@ -16,7 +16,7 @@ interface FetchBooksResponse {
 
 export const fetchBooks = async (params: FetchBooksParams) => {
   try {
-    return requestHandler<FetchBooksParams, FetchBooksResponse>("get", "/books", params);
+    return requestHandler<FetchBooksResponse, FetchBooksParams>("get", "/books", params);
   } catch (error) {
     return {
       books: [],
@@ -29,7 +29,7 @@ export const fetchBooks = async (params: FetchBooksParams) => {
 };
 
 export const fetchBook = async (bookId: string) => {
-  return requestHandler<string, BookDetail>("get", `/books/${bookId}`);
+  return requestHandler<BookDetail>("get", `/books/${bookId}`);
 };
 
 export const likeBook = async (bookId: number) => {

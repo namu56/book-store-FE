@@ -44,7 +44,11 @@ export const httpClient = createClient();
 // 공통 요청 부분
 type RequestMethod = "get" | "post" | "put" | "delete";
 
-export const requestHandler = async <T, R>(method: RequestMethod, url: string, payload?: T) => {
+export const requestHandler = async <R = undefined, T = undefined>(
+  method: RequestMethod,
+  url: string,
+  payload?: T
+) => {
   let response;
 
   // 리팩토링 대상

@@ -2,5 +2,5 @@ import { Category } from "../models/category.model";
 import { httpClient, requestHandler } from "./http";
 
 export const fetchCategory = async () => {
-  return await requestHandler<undefined, Category[]>("get", "/category");
+  return await requestHandler<Category[]>("get", "/category");
 };
