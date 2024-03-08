@@ -24,8 +24,6 @@ function Tabs({ children }: TabsProps) {
 
   const tabs = React.Children.toArray(children) as React.ReactElement<TabProps>[];
 
-  console.log("tabs:", tabs);
-
   return (
     <TabsStyle>
       {/* 각 Tab */}
