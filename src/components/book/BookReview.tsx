@@ -13,7 +13,7 @@ function BookReview({ reviews, onAdd }: Props) {
     <BookReviewStyle>
       <BookReviewAdd onAdd={onAdd} />
       {reviews.map((review) => (
-        <BookReviewItem review={review} />
+        <BookReviewItem key={review.id} review={review} />
       ))}
     </BookReviewStyle>
   );

@@ -12,7 +12,7 @@ const Star = (props: Pick<IBookReviewItem, "score">) => {
     // 화면
     <span className="star">
       {Array.from({ length: props.score }, (_, index) => (
-        <span>
+        <span key={index}>
           <FaStar />
         </span>
       ))}

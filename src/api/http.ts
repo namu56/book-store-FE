@@ -57,7 +57,7 @@ export const requestHandler = async <R = undefined, T = undefined>(
       response = await httpClient.post<R>(url, payload);
       break;
     case "get":
-      response = await httpClient.get<R>(url, { params: payload });
+      response = await httpClient.get<R>(url);
       break;
     case "put":
       response = await httpClient.post<R>(url, payload);
