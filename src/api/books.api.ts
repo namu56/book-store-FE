@@ -40,3 +40,7 @@ export const likeBook = async (bookId: number) => {
 export const unlikeBook = async (bookId: number) => {
   return requestHandler("delete", `/likes/${bookId}`);
 };
+
+export const fetchBestBooks = async () => {
+  return requestHandler<Book[]>("get", `/books/best`);
+};
